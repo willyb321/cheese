@@ -1,0 +1,16 @@
+{
+  "name": "cheese",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "run-p client server",
+    "client": "cd client && npm run dev",
+    "server": "cd server && npm run dev"
+  },
+  "repository": "https://github.com/willyb321/cheese.git",
+  "author": "willyb321 <wbwilliam7@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}

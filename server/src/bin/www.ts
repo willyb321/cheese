@@ -81,17 +81,12 @@ function onError(error) {
 			throw error;
 	}
 }
-export interface serverAddress {
-	address: string;
-	family: string;
-	port: number;
-}
 /**
  * Event listener for HTTP server "listening" event.
  */
 
 function onListening() {
-	const addr: serverAddress = server.address();
+	const addr = server.address();
 	const bind =
 		typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
 	debug('Listening on ' + bind);
