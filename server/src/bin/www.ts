@@ -13,7 +13,7 @@ import * as debug0 from 'debug';
 /**
  * Module dependencies.
  */
-import app from "../app";
+import app from '../app';
 
 const debug = debug0('server');
 /**
@@ -65,9 +65,7 @@ function onError(error) {
 		throw error;
 	}
 
-	const bind = typeof port === 'string'
-		? 'Pipe ' + port
-		: 'Port ' + port;
+	const bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
 
 	// handle specific listen errors with friendly messages
 	switch (error.code) {
@@ -94,8 +92,7 @@ export interface serverAddress {
 
 function onListening() {
 	const addr: serverAddress = server.address();
-	const bind = typeof addr === 'string'
-		? 'pipe ' + addr
-		: 'port ' + addr.port;
+	const bind =
+		typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
 	debug('Listening on ' + bind);
 }
