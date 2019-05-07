@@ -1,4 +1,3 @@
-import 'source-map-support/register';
 
 import * as express from 'express';
 import * as logger from 'morgan';
@@ -19,7 +18,6 @@ process.on('unhandledRejection', (err: Error) => {
 });
 
 const app: express.Application = express();
-const cacheTime: number = 86400000 * 7;
 
 app.use(responseTime());
 app.use(logger('dev'));
