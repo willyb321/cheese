@@ -1,4 +1,8 @@
 #!/usr/bin/env node
+
+import "reflect-metadata";
+
+
 process.on('SIGTERM', () => {
 	process.exit(0);
 });

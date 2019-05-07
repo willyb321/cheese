@@ -1,12 +1,20 @@
-import * as mongoose from 'mongoose';
+import {createConnection} from "typeorm";
+import {User} from "./entity/User";
 
-mongoose.connect(
-	`mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/${
-		process.env.DB_NAME
-	}`
-);
-export const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => {
-	console.log('Connected!');
-});
+createConnection().then(async connection => {
+
+  console.log("Inserting a new user into the database...");
+  const user = new User();
+  user.firstName = "Timber";
+  user.lastName = "Saw";
+  user.age = 25;
+  await connection.manager.save(user);
+  console.log("Saved a new user with id: " + user.id);
+
+  console.log("Loading users from the database...");
+  const users = await connection.manager.find(User);
+  console.log("Loaded users: ", users);
+
+  console.log("Here you can setup and run express/koa/any other framework.");
+
+}).catch(error => console.log(error));

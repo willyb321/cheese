@@ -3,7 +3,9 @@
 		"module": "commonjs",
 		"outDir": "lib/",
 		"target": "es2015",
-		"lib": ["es2017", "es2016", "dom", "es2015"],
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+		"lib": ["es2017", "es2016", "dom", "es2015", "es6"],
 		"sourceMap": true,
 		"moduleResolution": "node",
 		"typeRoots": ["node_modules/@types"]
