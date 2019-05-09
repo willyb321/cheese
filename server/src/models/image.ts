@@ -5,14 +5,20 @@ module.exports = (sequelize, DataType) => {
     'Image',
     {
       id: {
-        type: DataType.UUID,
-        defaultValue: DataType.UUIDV1,
+        type: DataType.INTEGER,
+        autoIncrement: true,
         primaryKey: true
       },
-      path: {
+      originalName: {
         type: DataType.STRING
       },
-      filename: {
+      fileName: {
+        type: DataType.STRING
+      },
+      userId: {
+        type: DataType.STRING
+      },
+      fileExt: {
         type: DataType.STRING
       }
     },
