@@ -2,6 +2,17 @@
 import 'source-map-support/register';
 import "reflect-metadata";
 
+require('dotenv').config();
+
+process.on('uncaughtException', (err: Error) => {
+  console.log(err);
+});
+
+process.on('unhandledRejection', (err: Error) => {
+  console.log(err);
+});
+
+
 
 process.on('SIGTERM', () => {
 	process.exit(0);
@@ -10,8 +21,7 @@ process.on('SIGINT', () => {
 	process.exit(0);
 });
 import * as http from 'http';
-import {config} from 'dotenv';
-config();
+
 import * as debug0 from 'debug';
 
 /**
