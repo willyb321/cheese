@@ -2,10 +2,12 @@ import * as express from 'express';
 import * as logger from 'morgan';
 import * as cookieParser from 'cookie-parser';
 import * as bodyParser from 'body-parser';
+import {tmpdir} from 'os';
 import * as responseTime from 'response-time';
 import {models} from './models';
 
 const session = require('express-session');
+const fileUpload = require('express-fileupload');
 const passport = require('passport');
 const Auth0Strategy = require('passport-auth0');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -88,6 +90,14 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser(process.env.SESSION_SECRET));
+app.use(fileUpload({
+  safeFileNames: true,
+  preserveExtension: 4,
+  createParentPath: true,
+  // useTempFiles : true,
+  // tempFileDir : tmpdir()
+
+}));
 
 const sessionStore = new SequelizeStore({
   db: models.sequelize

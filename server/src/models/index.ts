@@ -43,4 +43,4 @@ models.sequelize = sequelize;
 
 models.Sequelize = Sequelize;
 
-
+sequelize.sync();

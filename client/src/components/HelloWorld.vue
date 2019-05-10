@@ -21,4 +21,3 @@ export default {
   methods: {}
 };
 </script>
-<style src="../../node_modules/@uppy/core/dist/style.css"></style>

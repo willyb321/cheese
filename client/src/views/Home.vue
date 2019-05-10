@@ -1,13 +1,13 @@
 <template>
-  <HelloWorld />
+  <file-upload />
 </template>
 
 <script>
-import HelloWorld from "../components/HelloWorld";
+import FileUpload from '../components/FileUpload';
 
 export default {
   components: {
-    HelloWorld
+    FileUpload,
   }
 };
 </script>

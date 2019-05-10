@@ -24,8 +24,10 @@ module.exports = (sequelize, DataType) => {
     },
     {
       indexes: [
-        {fields: ['expiresAt']},
-        {fields: ['id']}
+        {fields: ['id']},
+        {fields: ['fileExt']},
+        {fields: ['userId']},
+        {fields: ['fileName']},
       ],
       freezeTableName: true
     }
