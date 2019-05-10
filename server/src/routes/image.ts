@@ -67,9 +67,7 @@ router.post('/upload', async (req: any, res) => {
 			return res.status(500).send('Internal server error!');
 		}
 		return res.json({imageId: model.shortId});
-		return res.send('File uploaded!');
 	});
-	// return res.json(req.files);
 });
 
 export default router;
