@@ -65,3 +65,4 @@ typings/
 server/lib
 db/
 server/database\.sqlite
+server/uploads
