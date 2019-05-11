@@ -5,6 +5,7 @@ import * as bodyParser from 'body-parser';
 import {tmpdir} from 'os';
 import * as responseTime from 'response-time';
 import {models} from './models';
+import {minioClient} from './utils';
 
 const session = require('express-session');
 const fileUpload = require('express-fileupload');

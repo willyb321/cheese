@@ -1,7 +1,9 @@
 import * as express from 'express';
 import {models} from '../models';
 import {join, extname} from 'path';
-const fs = require('fs-extra');
+import {minioClient} from '../utils';
+
+import * as fs from 'fs-extra';
 
 const router: express.Router = express.Router();
 
@@ -22,6 +24,7 @@ router.get('/:id', async (req, res) => {
 		return res.status(500).send('Internal server error!');
 	}
 	console.log(img);
+
 	if (img && img[0]) {
 		img = img[0];
 		console.log(img);
